@@ -1,9 +1,293 @@
+:root {
+  --primary-color: #bcccab;
+  --secondary-color: #82946c;
+  --text-color: #faf1e4;
+  --box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+  --border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
 .App {
   text-align: center;
   margin: 50px 0;
 }
 
-footer {
+.header {
+  margin: 0 340px;
+}
+
+.Search-bar {
+  padding: 64px 0;
+
+  h2 {
+    font-style: italic;
+    font-size: 48px;
+    padding-bottom: 8px;
+    text-align: left;
+  }
+
+  input.form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px 25px;
+    transition: 200ms ease-in-out;
+    border-radius: 40px;
+  }
+
+  input.form-control::placeholder {
+    color: var(--text-color);
+  }
+
+  input.form-control:hover::placeholder,
+  input.form-control:focus::placeholder {
+    color: var(--secondary-color);
+  }
+
+  input.form-control:hover,
+  input.form-control:focus,
+  input.form-control:active {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+  }
+
+  .input-group button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 600;
+    left: 1px;
+    border-radius: 40px;
+    padding-right: 30px;
+  }
+
+  .input-group button:hover {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+  }
+}
+
+.Body {
+  border-bottom: var(--border);
+  margin-bottom: 64px;
+
+  .headword {
+    margin-bottom: 64px;
+  }
+
+  .word {
+    font-size: 130px;
+    font-weight: 800;
+    text-align: left;
+  }
+
+  .phonetics {
+    text-align: right;
+  }
+
+  .Phonetic button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--text-color);
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 40px;
+    padding: 10px 25px;
+    margin: 5px;
+  }
+
+  .Phonetic button:hover {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+  }
+
+  .Phonetic-text {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .partOfSpeech {
+    font-style: italic;
+    padding: 30px;
+    text-align: right;
+    border-top: var(--border);
+  }
+
+  .main-result {
+    text-align: left;
+    padding: 25px;
+    border-right: var(--border);
+    border-left: var(--border);
+    border-top: var(--border);
+  }
+
+  .definition {
+    font-size: 35px;
+    padding-bottom: 10px;
+  }
+
+  h5 {
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 800;
+  }
+
+  .synonyms {
+    font-size: 20px;
+    padding: 0 40px;
+    margin: 6px 0 0 0;
+  }
+
+  .synonym-words {
+    padding: 0 5px;
+  }
+
+  .phrases {
+    font-size: 25px;
+    line-height: 1.5;
+    padding: 30px;
+    border-top: var(--border);
+  }
+
+  .example {
+    margin-top: -10px;
+    text-align: left;
+  }
+
+  .example-title {
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 0 20px;
+  }
+
+  ul {
+    line-height: 1.5;
+    padding-inline-start: 0;
+  }
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0 5px;
+  }
+}
+
+footer p {
+  font-size: 22px;
+  margin: 5px;
   text-align: center;
-  margin: 30px 0;
+}
+
+footer a,
+footer a:visited {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--text-color);
+}
+
+@media (max-width: 1550px) {
+  .Body .synonyms {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 1315px) {
+  .header {
+    margin: 0 150px;
+  }
+
+  .Body .synonyms {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .Body .synonyms {
+    padding: 0 1px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .header {
+    margin: 0 50px;
+  }
+
+  .Body .synonym-words {
+    padding: 0 0 0 10px;
+  }
+}
+
+@media (max-width: 940px) {
+  .header {
+    margin: 0 50px;
+  }
+
+  .Body .synonym-words {
+    padding: 0 0 0 20px;
+  }
+}
+
+@media (max-width: 770px) {
+  .App {
+    margin: 0;
+  }
+
+  .header {
+    margin: 0 20px;
+  }
+
+  .Body {
+    .word {
+      font-size: 80px;
+    }
+
+    .Phonetic button {
+      font-size: 20px;
+      padding: 2px 10px;
+    }
+
+    .meaning-col {
+      padding: 10px 20px 10px 30px;
+    }
+
+    .definition {
+      padding: 0;
+    }
+
+    .Synonyms {
+      padding: 0 0 0 30px;
+      margin: 2px 0 -10px 0;
+      line-height: -100;
+    }
+
+    .synonyms {
+      margin: -1px 0 0 0;
+    }
+
+    .synonym-words {
+      font-size: 20px;
+      padding: 0 0 0 30px;
+    }
+
+    .synonym-words ul {
+      line-height: 1.2;
+    }
+  }
 }

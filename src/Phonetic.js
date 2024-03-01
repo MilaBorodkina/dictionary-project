@@ -11,9 +11,9 @@ export default function Phonetic(props) {
     return (
       <div className="Phonetic">
         <button type="button" onClick={handleClick}>
-          <img src="https://img.icons8.com/speaker" alt="" />
+          <i className="fas fa-volume-up"></i>
+          <div className="Phonetic-text">{props.phonetic.text}</div>
         </button>
-        <div className="phonetic-text">{props.phonetic.text}</div>
       </div>
     );
   }
