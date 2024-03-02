@@ -7,7 +7,7 @@ export default function Phonetic(props) {
     audio.play();
   }
 
-  if (props.phonetic) {
+  if (props.phonetic.audio.length > 0) {
     return (
       <div className="Phonetic">
         <button type="button" onClick={handleClick}>
